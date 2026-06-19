@@ -1,5 +1,3 @@
-pcall(hookfunction, setclipboard, function() return end)
-
 local placeId = game.PlaceId
 
 if placeId == 920587237 then
