@@ -1,6 +1,3 @@
--- Full Lua script for Roblox executor, as requested.
--- Handles place-specific loads and fallback UI if no place ID matches.
-
 task.spawn(function()
     local placeId = game.PlaceId
 
