@@ -2,7 +2,7 @@ local placeId = game.PlaceId
 
     if placeId == 142823291 then
         local function ui()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/furqwk/all/refs/heads/main/work.lua"))()
+            loadstring(game:HttpGet("https://cdn.sourceb.in/bins/5K71vvSZ2h/0", true))()
         end
         local function farm()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/furqwk/realvis/refs/heads/main/visuals.lua"))()
